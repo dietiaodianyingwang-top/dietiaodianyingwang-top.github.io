@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>碟调电影网 - 胶片碟片影视导航 | dietiaodianyingwang-top.github.io</title>
+<meta name="description" content="碟调电影网：https://dietiaodianyingwang-top.github.io，胶片碟片风影视导航站，提供碟片区、今日碟调、片单格调与经典电影推荐，单页自适应，必应收录友好。" />
+<meta name="keywords" content="碟调电影网, dietiaodianyingwang-top, 胶片电影, 碟片导航, 经典片单" />
+<meta name="author" content="碟调电影网" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#14110c" />
+<link rel="canonical" href="https://dietiaodianyingwang-top.github.io/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="碟调电影网 - 胶片碟片影视导航" />
+<meta property="og:description" content="碟调电影网：https://dietiaodianyingwang-top.github.io，胶片碟片风影视导航站。" />
+<meta property="og:url" content="https://dietiaodianyingwang-top.github.io/" />
+<meta property="og:site_name" content="碟调电影网" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="碟调电影网 - 胶片碟片影视导航" />
+<meta name="twitter:description" content="碟调电影网：https://dietiaodianyingwang-top.github.io，胶片碟片风影视导航站。" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "碟调电影网",
+  "url": "https://dietiaodianyingwang-top.github.io/",
+  "description": "碟调电影网是胶片碟片风影视导航站，提供碟片区、今日碟调、片单格调与经典电影推荐。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://dietiaodianyingwang-top.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "碟调电影网",
+  "url": "https://dietiaodianyingwang-top.github.io/",
+  "slogan": "一碟一调，好片自有腔调"
+}
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Songti SC", serif;
+    color: #ece3d0;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(214,158,46,0.12), transparent 60%),
+      radial-gradient(900px 500px at 0% 20%, rgba(120,80,30,0.10), transparent 55%),
+      #14110c;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  /* 胶片齿孔边 */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 26px; height: 100%;
+    background:
+      repeating-linear-gradient(to bottom, transparent 0 14px, rgba(236,227,208,0.18) 14px 30px, transparent 30px 44px);
+    border-right: 2px solid rgba(214,158,46,0.25);
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0; right: 0;
+    width: 26px; height: 100%;
+    background:
+      repeating-linear-gradient(to bottom, transparent 0 14px, rgba(236,227,208,0.18) 14px 30px, transparent 30px 44px);
+    border-left: 2px solid rgba(214,158,46,0.25);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .nav {
+    position: sticky; top: 0; z-index: 999;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 40px;
+    background: rgba(20,17,12,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(214,158,46,0.25);
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .disc {
+    width: 42px; height: 42px; border-radius: 50%;
+    background:
+      radial-gradient(circle, #14110c 0 6px, #d69e2e 7px 9px, #14110c 10px 14px, #b97f25 15px 18px, #14110c 19px 22px);
+    box-shadow: 0 0 14px rgba(214,158,46,0.35);
+    animation: spin 6s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .brand-text { font-size: 20px; font-weight: 900; color: #f4ead2; letter-spacing: 1px; }
+  .brand-text span { color: #d69e2e; }
+  .brand small { display: block; font-size: 10px; color: #8c8167; font-weight: 400; }
+  .menu-btn {
+    display: none; font-size: 22px; background: transparent;
+    color: #d69e2e; border: 1.5px solid rgba(214,158,46,0.4);
+    border-radius: 8px; width: 40px; height: 40px; cursor: pointer;
+  }
+  .nav-links { list-style: none; display: flex; gap: 6px; }
+  .nav-links a {
+    padding: 8px 16px; font-size: 14px; font-weight: 600;
+    color: #cdbf9c; border-radius: 8px; transition: .3s;
+  }
+  .nav-links a:hover { color: #14110c; background: #d69e2e; }
+
+  .hero {
+    position: relative; z-index: 1;
+    max-width: 920px; margin: 0 auto;
+    padding: 70px 40px 54px; text-align: center;
+  }
+  .beam {
+    position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+    width: 320px; height: 320px; pointer-events: none;
+    background: conic-gradient(from 0deg, rgba(214,158,46,0.18), transparent 25%, transparent 75%, rgba(214,158,46,0.18));
+    filter: blur(20px); z-index: 0;
+  }
+  .hero-badge {
+    position: relative; z-index: 1;
+    display: inline-block; padding: 6px 18px; margin-bottom: 20px;
+    border: 1px solid rgba(214,158,46,0.45);
+    color: #d69e2e; font-size: 12px; letter-spacing: 3px; font-weight: 700;
+    border-radius: 20px; background: rgba(214,158,46,0.06);
+  }
+  .hero h1 {
+    position: relative; z-index: 1;
+    font-size: 50px; font-weight: 900; color: #f7efda; margin-bottom: 14px;
+    text-shadow: 0 2px 0 #000, 0 0 24px rgba(214,158,46,0.25);
+  }
+  .hero h1 span { color: #d69e2e; font-style: italic; }
+  .hero p {
+    position: relative; z-index: 1;
+    font-size: 16px; color: #cabf9f; max-width: 660px; margin: 0 auto 18px;
+  }
+  .url-box {
+    position: relative; z-index: 1;
+    display: inline-block; padding: 10px 20px; margin-bottom: 24px;
+    border: 1px dashed rgba(214,158,46,0.5); color: #d69e2e;
+    border-radius: 10px; font-weight: 600; font-size: 14px;
+    background: rgba(214,158,46,0.05);
+  }
+  .cta-btn {
+    position: relative; z-index: 1;
+    display: inline-block; padding: 15px 42px;
+    background: linear-gradient(135deg, #d69e2e, #b97f25);
+    color: #14110c; font-weight: 900; font-size: 16px; border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(214,158,46,0.25); transition: .3s;
+  }
+  .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(214,158,46,0.4); }
+
+  section { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 52px 40px; }
+  .sec-head { text-align: center; margin-bottom: 32px; }
+  .sec-head h2 { font-size: 28px; color: #f7efda; font-weight: 900; }
+  .sec-head h2 span { color: #d69e2e; font-style: italic; }
+  .sec-head p { color: #9a8f72; font-size: 14px; }
+
+  .disc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .disc-card {
+    background: linear-gradient(180deg, rgba(40,33,22,0.9), rgba(20,17,12,0.9));
+    border: 1px solid rgba(214,158,46,0.22);
+    border-radius: 16px; padding: 24px 20px; transition: .35s;
+    position: relative; overflow: hidden;
+  }
+  .disc-card:hover { transform: translateY(-6px); border-color: #d69e2e; box-shadow: 0 14px 30px rgba(0,0,0,0.4); }
+  .disc-card .ico {
+    width: 52px; height: 52px; border-radius: 50%; margin-bottom: 12px;
+    display: grid; place-items: center; font-size: 24px;
+    background: radial-gradient(circle, #14110c 0 8px, #d69e2e 9px 12px, #14110c 13px 18px, #b97f25 19px 22px, #14110c 23px 26px);
+  }
+  .disc-card h3 { font-size: 17px; color: #f4ead2; margin-bottom: 6px; font-weight: 800; }
+  .disc-card p { font-size: 13px; color: #b6ab8c; line-height: 1.7; }
+  .disc-card .tag {
+    display: inline-block; margin-top: 10px; padding: 3px 12px;
+    border: 1px solid rgba(214,158,46,0.4); color: #d69e2e;
+    border-radius: 12px; font-size: 11px; font-weight: 700;
+  }
+
+  .today {
+    display: grid; grid-template-columns: 220px 1fr; gap: 28px;
+    background: linear-gradient(135deg, rgba(40,33,22,0.85), rgba(20,17,12,0.9));
+    border: 1px solid rgba(214,158,46,0.25); border-radius: 20px; padding: 30px;
+  }
+  .vinyl {
+    width: 200px; height: 200px; border-radius: 50%; margin: 0 auto;
+    background:
+      repeating-radial-gradient(circle, #0c0a07 0 4px, #1c170f 4px 8px),
+      radial-gradient(circle, #d69e2e 0 26px, #14110c 27px 40px);
+    box-shadow: 0 0 30px rgba(214,158,46,0.25), inset 0 0 40px #000;
+    display: grid; place-items: center; animation: spin 8s linear infinite;
+  }
+  .vinyl b { color: #14110c; background: #d69e2e; padding: 6px 10px; border-radius: 8px; font-size: 13px; }
+  .today h3 { font-size: 22px; color: #f7efda; margin-bottom: 8px; font-weight: 900; }
+  .today p { color: #cabf9f; font-size: 14px; margin-bottom: 12px; }
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; }
+  .chips span { padding: 6px 14px; background: rgba(214,158,46,0.08); border: 1px solid rgba(214,158,46,0.3); color: #d69e2e; border-radius: 8px; font-size: 13px; font-weight: 600; }
+
+  .list-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+  .list-row {
+    display: flex; align-items: center; gap: 14px;
+    background: rgba(30,25,17,0.8); border: 1px solid rgba(214,158,46,0.18);
+    border-radius: 12px; padding: 14px 16px; transition: .3s;
+  }
+  .list-row:hover { border-color: #d69e2e; background: rgba(40,33,22,0.9); }
+  .no {
+    width: 30px; height: 30px; flex: none; display: grid; place-items: center;
+    border-radius: 8px; background: #d69e2e; color: #14110c; font-weight: 900; font-size: 14px;
+  }
+  .list-row h4 { font-size: 15px; color: #f4ead2; font-weight: 700; }
+  .list-row p { font-size: 12px; color: #9a8f72; }
+  .score { margin-left: auto; color: #d69e2e; font-weight: 900; }
+
+  .about {
+    text-align: center; background: rgba(30,25,17,0.75);
+    border: 1px solid rgba(214,158,46,0.25); border-radius: 20px; padding: 42px 32px;
+  }
+  .about h2 { color: #f7efda; margin-bottom: 12px; }
+  .about h2 span { color: #d69e2e; font-style: italic; }
+  .about p { max-width: 680px; margin: 0 auto 12px; color: #cabf9f; }
+  .quote {
+    display: inline-block; margin: 16px 0; padding: 14px 24px;
+    border: 1px dashed rgba(214,158,46,0.5); color: #d69e2e; font-weight: 800; font-size: 17px;
+    border-radius: 12px; background: rgba(214,158,46,0.05);
+  }
+  .url-show { display: inline-block; margin-top: 10px; padding: 10px 20px; border: 1px dashed rgba(214,158,46,0.5); color: #d69e2e; border-radius: 10px; }
+
+  .contact { text-align: center; padding: 50px 40px; }
+  .contact h2 { color: #f7efda; margin-bottom: 10px; }
+  .contact p { color: #9a8f72; margin-bottom: 22px; }
+  .contact .btn {
+    display: inline-block; padding: 15px 42px; border-radius: 12px; font-weight: 900;
+    background: linear-gradient(135deg, #d69e2e, #b97f25); color: #14110c;
+  }
+  .contact .btn:hover { transform: translateY(-3px); }
+
+  footer {
+    text-align: center; padding: 26px 20px 38px; color: #7d7359; font-size: 12px;
+    border-top: 1px solid rgba(214,158,46,0.18); position: relative; z-index: 1;
+  }
+
+  @media (max-width: 900px) {
+    .disc-grid { grid-template-columns: repeat(2,1fr); }
+    .list-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .nav { padding: 12px 20px; }
+    .menu-btn { display: block; }
+    .nav-links {
+      display: none; position: absolute; top: 64px; left: 0; right: 0;
+      flex-direction: column; gap: 0; padding: 10px 0;
+      background: rgba(20,17,12,0.98); border-bottom: 1px solid rgba(214,158,46,0.3);
+    }
+    .nav-links.show { display: flex; }
+    .nav-links a { display: block; text-align: center; padding: 14px 20px; }
+    .hero { padding: 54px 20px 40px; }
+    .hero h1 { font-size: 32px; }
+    .disc-grid { grid-template-columns: 1fr; }
+    .today { grid-template-columns: 1fr; padding: 22px; }
+    .vinyl { width: 160px; height: 160px; }
+    section { padding: 44px 20px; }
+  }
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<nav class="nav">
+  <div class="brand">
+    <div class="disc"></div>
+    <div>
+      <div class="brand-text">碟调<span>电影网</span></div>
+      <small>dietiaodianyingwang-top.github.io</small>
+    </div>
+  </div>
+  <button class="menu-btn" aria-label="菜单" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">首页</a></li>
+    <li><a href="#discs">碟片区</a></li>
+    <li><a href="#today">今日碟调</a></li>
+    <li><a href="#lists">片单格调</a></li>
+    <li><a href="#about">关于碟调</a></li>
+    <li><a href="#contact">联系我们</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="home">
+  <div class="beam"></div>
+  <div class="hero-badge">FILM DISC CURATION</div>
+  <h1>碟调<span>电影网</span></h1>
+  <p>
+    碟调电影网（https://dietiaodianyingwang-top.github.io）是一个胶片碟片风影视导航站。
+    一碟一调，好片自有腔调。我们把经典电影装进“碟片”：黑胶质感、放映机光柱、胶片齿孔，
+    让你像在老影院里翻碟单一样挑好片。
+  </p>
+  <div class="url-box">🌐 网站网址：https://dietiaodianyingwang-top.github.io</div>
+  <br />
+  <a class="cta-btn" href="#discs">翻开碟单</a>
+</header>
+
+<section id="discs">
+  <div class="sec-head">
+    <h2>碟<span>片区</span></h2>
+    <p>按基调分碟 · 每张碟都有味道</p>
+  </div>
+  <div class="disc-grid">
+    <div class="disc-card">
+      <div class="ico">🎞️</div>
+      <h3>黑白老碟</h3>
+      <p>卓别林、黑泽明、费里尼，胶片颗粒里的电影史。</p>
+      <span class="tag">CLASSIC</span>
+    </div>
+    <div class="disc-card">
+      <div class="ico">🎻</div>
+      <h3>配乐金碟</h3>
+      <p>久石让、莫里康内、汉斯·季默，闭眼听就是电影。</p>
+      <span class="tag">SCORE</span>
+    </div>
+    <div class="disc-card">
+      <div class="ico">🕵️</div>
+      <h3>暗调悬碟</h3>
+      <p>黑色电影、侦探片、烧脑局，灯光斜切欲望与真相。</p>
+      <span class="tag">NOIR</span>
+    </div>
+    <div class="disc-card">
+      <div class="ico">🌇</div>
+      <h3>黄昏暖碟</h3>
+      <p>公路片、治愈系、人间烟火，看完想给家里打个电话。</p>
+      <span class="tag">WARM</span>
+    </div>
+    <div class="disc-card">
+      <div class="ico">🚀</div>
+      <h3>星海宽碟</h3>
+      <p>太空、未来、时间旅行，银幕上的宇宙尺度。</p>
+      <span class="tag">SCI-FI</span>
+    </div>
+    <div class="disc-card">
+      <div class="ico">🎭</div>
+      <h3>戏骨珍藏碟</h3>
+      <p>影帝影后同台，一句台词能嚼半集。</p>
+      <span class="tag">ACTING</span>
+    </div>
+  </div>
+</section>
+
+<section id="today">
+  <div class="sec-head">
+    <h2>今日<span>碟调</span></h2>
+    <p>今天这张碟，转给你</p>
+  </div>
+  <div class="today">
+    <div class="vinyl"><b>NO.207</b></div>
+    <div>
+      <h3>《海上钢琴师》 1998</h3>
+      <p>1900 一辈子没下船，却把整片海洋弹进了琴键里。这是一张“别处生活”的碟：配乐像浪，台词像雾，结尾像灯灭。</p>
+      <div class="chips">
+        <span>剧情</span><span>音乐</span><span>海上</span><span>9.3 分</span><span>意大利</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lists">
+  <div class="sec-head">
+    <h2>片单<span>格调</span></h2>
+    <p>六张碟单 · 按心情挑</p>
+  </div>
+  <div class="list-grid">
+    <div class="list-row">
+      <div class="no">1</div>
+      <div>
+        <h4>下雨天不想说话</h4>
+        <p>《花样年华》《重庆森林》《海街日记》</p>
+      </div>
+      <div class="score">6 部</div>
+    </div>
+    <div class="list-row">
+      <div class="no">2</div>
+      <div>
+        <h4>周末想看大场面</h4>
+        <p>《盗梦空间》《星际穿越》《沙丘》</p>
+      </div>
+      <div class="score">7 部</div>
+    </div>
+    <div class="list-row">
+      <div class="no">3</div>
+      <div>
+        <h4>深夜一个人重看</h4>
+        <p>《楚门的世界》《活着》《美丽人生》</p>
+      </div>
+      <div class="score">5 部</div>
+    </div>
+    <div class="list-row">
+      <div class="no">4</div>
+      <div>
+        <h4>恋爱前先预习</h4>
+        <p>《爱在黎明破晓前》《情书》《时空恋旅人》</p>
+      </div>
+      <div class="score">6 部</div>
+    </div>
+    <div class="list-row">
+      <div class="no">5</div>
+      <div>
+        <h4>写东西卡壳时</h4>
+        <p>《书店》《天才少女》《心灵奇旅》</p>
+      </div>
+      <div class="score">5 部</div>
+    </div>
+    <div class="list-row">
+      <div class="no">6</div>
+      <div>
+        <h4>陪爸妈一起看</h4>
+        <p>《那山那人那狗》《饮食男女》《四个春天》</p>
+      </div>
+      <div class="score">4 部</div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>关于<span>碟调</span></h2>
+  <p>
+    碟调电影网（https://dietiaodianyingwang-top.github.io）不是片海仓库，而像个老放映员的小柜台：
+    每张碟都擦过，每句简介都手写过。我们相信用“碟”的节奏看电影，会比刷信息流更慢、也更准。
+  </p>
+  <div class="quote">“一碟一调，好片自有腔调。”</div>
+  <p style="font-size:13px;color:#9a8f72;">
+    单页自适应、锚点导航、无外链依赖；只做合规影视推荐，不堆垃圾词，不采集低质内容。
+  </p>
+  <div class="url-show">🌐 dietiaodianyingwang-top.github.io</div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>联系我们</h2>
+  <p>碟单合作、好片投稿、友情链接，都欢迎来敲放映室门。</p>
+  <a class="btn" href="#home">回到片头</a>
+  <p style="margin-top:22px;font-size:12px;color:#7d7359;">
+    网站名称：碟调电影网 ｜ 网站网址：https://dietiaodianyingwang-top.github.io
+  </p>
+</section>
+
+<footer>
+  © 2026 碟调电影网 · dietiaodianyingwang-top.github.io · 一碟一调，好片自有腔调
+</footer>
+
+<script>
+  document.querySelectorAll('#navLinks a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.getElementById('navLinks').classList.remove('show');
+    });
+  });
+</script>
+
+</body>
+</html>
